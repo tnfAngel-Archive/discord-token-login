@@ -5,9 +5,9 @@
   "description": "Aplicación de electron para iniciar sesión en tokens de Discord de manera simple.",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron src/index.js",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "start": "yarn electron src/index.js",
+    "pack": "yarn electron-builder --dir",
+    "dist": "yarn electron-builder"
   },
   "keywords": [],
   "author": "tnfAngel",
@@ -32,7 +32,8 @@
     "linux": {
       "target": [
         "AppImage",
-        "deb"
+        "deb",
+        "rpm"
       ]
     },
     "win": {
@@ -48,7 +49,7 @@
     }
   },
   "devDependencies": {
-    "electron": "^13.1.5",
+    "electron": "13.1.7",
     "electron-builder": "^22.11.7"
   },
   "dependencies": {
