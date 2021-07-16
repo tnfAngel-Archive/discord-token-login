@@ -26,22 +26,14 @@ Si no quieres usar la app oficial y deseas hacer tu propia aplicación a partir 
 
 > Comandos
 
-Instalar todas las depencencias.
+Instalar y automaticamente generar un ejecutable.
+```bash
+./install.sh
+```
 
-```js
-npm install -g yarn
+Iniciar la app en modo de desarrollo.
+```bash
+npm i -g yarn
 yarn set version berry
-yarn
-```
-
-Iniciar la aplicación en modo desarrollo, sin exe.
-
-```js
-yarn run start
-```
-
-Crear un exe para la aplicación.
-
-```js
-yarn run dist
+yarn install --inmutable --inmutable-cache
 ```
