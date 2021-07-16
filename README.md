@@ -29,17 +29,19 @@ Si no quieres usar la app oficial y deseas hacer tu propia aplicación a partir 
 Instalar todas las depencencias.
 
 ```js
-npm install
+npm install -g yarn
+yarn set version berry
+yarn
 ```
 
 Iniciar la aplicación en modo desarrollo, sin exe.
 
 ```js
-npm start
+yarn run start
 ```
 
 Crear un exe para la aplicación.
 
 ```js
-npm run dist
+yarn run dist
 ```
