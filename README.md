@@ -6,7 +6,7 @@
 
 > Descarga
 
-Puedes usar Discord Token Login descargando la aplicación oficial desde este [enlace](https://www.mediafire.com/file/gdktx7n052ywhai/Discord+Token+Login+Setup+1.0.0.exe/file).
+Puedes usar Discord Token Login descargando la aplicación oficial desde este [enlace])(https://github.com/tnfAngel/discord-token-login/releases/tag/1.0.0).
 
 > Imagenes
 
