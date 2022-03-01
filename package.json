@@ -1,61 +1,72 @@
 {
-  "name": "discord-token-login",
-  "productName": "Discord Token Login",
-  "version": "1.0.0",
-  "description": "Aplicación de electron para iniciar sesión en tokens de Discord de manera simple.",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "yarn electron src/index.js",
-    "pack": "yarn electron-builder --dir",
-    "dist": "yarn electron-builder"
-  },
-  "keywords": [],
-  "author": "tnfAngel",
-  "license": "CC0-1.0",
-  "build": {
-    "appId": "Discord Token Login",
-    "asar": true,
-    "dmg": {
-      "contents": [
-        {
-          "x": 110,
-          "y": 150
-        },
-        {
-          "x": 240,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm"
-      ]
-    },
-    "win": {
-      "target": "NSIS",
-      "icon": "build/icon.ico"
-    },
-    "nsis": {
-      "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico",
-      "uninstallDisplayName": "Discord Token Login by tnfAngel",
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
-  },
-  "devDependencies": {
-    "electron": "13.1.7",
-    "electron-builder": "^22.11.7"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "electron-prompt": "^1.6.2",
-    "electron-reload": "^1.5.0",
-    "phone-fns": "^3.2.3"
-  }
+	"name": "discord-token-login",
+	"productName": "Discord Token Login",
+	"version": "1.0.1",
+	"description": "Aplicación de electron para iniciar sesión en tokens de Discord de manera simple.",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "yarn electron src/index.js",
+		"pack": "yarn electron-builder --dir",
+    "pretty": "yarn prettier --write .",
+		"dist": "yarn electron-builder"
+	},
+	"keywords": [
+		"electron",
+		"discord",
+		"login"
+	],
+	"author": {
+		"name": "tnfAngel",
+		"email": "contact@tnfAngel.ml",
+		"url": "https://tnfAngel.ml"
+	},
+	"license": "CC0-1.0",
+	"build": {
+		"appId": "Discord Token Login",
+		"asar": true,
+		"dmg": {
+			"contents": [
+				{
+					"x": 110,
+					"y": 150
+				},
+				{
+					"x": 240,
+					"y": 150,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb",
+				"rpm"
+			]
+		},
+		"win": {
+			"target": "NSIS",
+			"icon": "build/icon.ico"
+		},
+		"nsis": {
+			"installerIcon": "build/icon.ico",
+			"uninstallerIcon": "build/icon.ico",
+			"uninstallDisplayName": "Discord Token Login by tnfAngel",
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		}
+	},
+	"devDependencies": {
+		"electron": "17.1.0",
+		"electron-builder": "^22.14.13",
+		"electron-reload": "^1.5.0",
+		"prettier": "2.5.1"
+	},
+	"dependencies": {
+		"axios": "^0.26.0",
+		"electron-prompt": "^1.7.0",
+		"phone-fns": "^3.2.3"
+	},
+	"packageManager": "yarn@3.2.0"
 }
