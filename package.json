@@ -64,7 +64,7 @@
 		"prettier": "2.5.1"
 	},
 	"dependencies": {
-		"axios": "^0.26.0",
+		"axios": "^1.6.4",
 		"electron-prompt": "^1.7.0",
 		"phone-fns": "^3.2.3"
 	},
