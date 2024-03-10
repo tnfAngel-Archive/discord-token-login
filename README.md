@@ -1,5 +1,9 @@
 # Discord Token Login
 
+## ⚠️ Archivado
+¿Por qué?
+Si bien la aplicación puede llegar a funcionar, ya no se va a mantener o actualizar más. 
+
 ![Discord Token Login](https://cdn.discordapp.com/attachments/700345457343201314/865373929950806047/icon.ico)
 
 🎈 Discord Token Login es un programa con el que puedes iniciar sesión en cuentas de usuarios usando su token. También funciona como gestor de cuentas, ya que puedes guardar los tokens en el almacenamiento local de la aplicación y cambiar fácilmente de cuenta sin poner de nuevo el token.
