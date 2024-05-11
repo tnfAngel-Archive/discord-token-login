@@ -25,7 +25,7 @@ function getToken() {
 function createWindow() {
 	const mainWindow = new BrowserWindow({
 		width: 1200,
-		height: 710,
+		height: 740,
 		frame: true,
 		backgroundColor: '#333',
 		title: 'Discord Token Login by tnfAngel',
