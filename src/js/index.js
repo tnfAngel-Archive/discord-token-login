@@ -40,9 +40,8 @@ $(document).ready(function () {
 			return (document.getElementById('consola').innerHTML =
 				"{'text': 'Unable to save the account. Make sure the token is unique.'}");
 
-		document.getElementById(
-			'consola'
-		).innerHTML = `{'text': 'The account ${cuenta.nombre} has been saved.'}`;
+		document.getElementById('consola').innerHTML =
+			`{'text': 'The account ${cuenta.nombre} has been saved.'}`;
 
 		$('#cuentas-token').html(
 			`<img src="${cuenta.avatar}" class="foto-token" alt="Avatar"> ${
@@ -72,9 +71,8 @@ $(document).ready(function () {
 
 		localStorage.setItem('cuentas', JSON.stringify(tokensArr));
 
-		document.getElementById(
-			'consola'
-		).innerHTML = `{'text': 'The account ${cuenta.nombre} has been deleted successfully.'}`;
+		document.getElementById('consola').innerHTML =
+			`{'text': 'The account ${cuenta.nombre} has been deleted successfully.'}`;
 
 		actualizarCuentas();
 
@@ -180,8 +178,8 @@ function actualizarPerfil(usuario) {
 							? usuario.banner
 								? `https://cdn.discordapp.com/banners/${usuario.id}/${usuario.banner}.webp`
 								: usuario.avatar
-								? `https://cdn.discordapp.com/avatars/${usuario.id}/${usuario.avatar}.webp`
-								: 'https://cdn.discordapp.com/embed/avatars/0.png'
+									? `https://cdn.discordapp.com/avatars/${usuario.id}/${usuario.avatar}.webp`
+									: 'https://cdn.discordapp.com/embed/avatars/0.png'
 							: 'https://images4.alphacoders.com/909/thumb-1920-909912.png'
 					}');">
 
@@ -208,20 +206,22 @@ function actualizarPerfil(usuario) {
 								? `https://cdn.discordapp.com/avatars/${usuario.id}/${usuario.avatar}.webp`
 								: 'https://cdn.discordapp.com/embed/avatars/0.png'
 						}" id="avatar" class="foto${
-		ejecutado ? '' : ' anim_imagen'
-	}" alt="AVATAR OF ${
-		usuario.username
-			? usuario.username.toUpperCase()
-			: 'UNKNOWN'
-	}">
+							ejecutado ? '' : ' anim_imagen'
+						}" alt="AVATAR OF ${
+							usuario.username
+								? usuario.username.toUpperCase()
+								: 'UNKNOWN'
+						}">
                         <div class="texto-foto">
                             <h1 style="font-size: 60px; line-height: 85%; margin: 0;">${
 								usuario.username
 									? usuario.username.toUpperCase()
 									: 'UNKNOWN'
 							}<span class="blurple" style="letter-spacing: -2px;">#${
-		usuario.discriminator ? usuario.discriminator : '0000'
-	}</span></h1>
+								usuario.discriminator
+									? usuario.discriminator
+									: '0000'
+							}</span></h1>
                             <h4 style="margin-top: 5px; margin-bottom: 10px;">${
 								usuario.bio
 									? usuario.bio.toUpperCase()
@@ -237,9 +237,7 @@ function actualizarPerfil(usuario) {
 									}
                                 </div>
                                 <div class="col">
-                                    VERIFIED: ${
-										usuario.verified ? 'YES' : 'NO'
-									}
+                                    VERIFIED: ${usuario.verified ? 'YES' : 'NO'}
                                 </div>
                                 <div class="col">
                                     NITRO: ${
@@ -260,7 +258,7 @@ function actualizarPerfil(usuario) {
 														'+NN NNN NN NN NN',
 														usuario.phone
 													)
-											  )
+												)
 											: 'WITHOUT PHONE'
 									}
                                 </div>
@@ -324,9 +322,8 @@ async function peticionDiscord() {
 				);
 
 				if (existe) {
-					document.getElementById(
-						'consola'
-					).innerHTML = `{'text': 'The account with the token ${token()} has been remove because the token is no longer valid.'}`;
+					document.getElementById('consola').innerHTML =
+						`{'text': 'The account with the token ${token()} has been remove because the token is no longer valid.'}`;
 				} else {
 					if (e.response) {
 						document.getElementById('consola').innerHTML =

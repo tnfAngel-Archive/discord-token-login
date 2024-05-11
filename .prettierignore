@@ -10,3 +10,7 @@ yarn.lock
 *.css
 *.html
 dist/*
+fuentes
+build
+assets
+*.yaml

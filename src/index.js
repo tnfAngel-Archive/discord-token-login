@@ -5,7 +5,7 @@ console.logs = [];
 console.log = function () {
 	console.logs.push(Array.from(arguments));
 
-	console.stdlog.apply(console, arguments);
+	console.stdlog(...arguments);
 };
 
 const { app, BrowserWindow, ipcMain } = require('electron');
@@ -102,9 +102,7 @@ ipc.on('app:login', (event, token) => {
 	discordWindow.setTitle('Discord Token Login by tnfAngel');
 	discordWindow.loadURL('https://discord.com/login');
 
-	discordWindow.on('closed', () =>
-		console.log('Discord window closed.')
-	);
+	discordWindow.on('closed', () => console.log('Discord window closed.'));
 
 	console.log('Discord window created.');
 

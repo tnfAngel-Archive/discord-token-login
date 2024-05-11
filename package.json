@@ -1,7 +1,7 @@
 {
 	"name": "discord-token-login",
 	"productName": "Discord Token Login",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Aplicación de electron para iniciar sesión en tokens de Discord de manera simple.",
 	"main": "src/index.js",
 	"scripts": {
