@@ -5,10 +5,10 @@
 	"description": "Aplicación de electron para iniciar sesión en tokens de Discord de manera simple.",
 	"main": "src/index.js",
 	"scripts": {
-		"start": "yarn electron src/index.js",
-		"pack": "yarn electron-builder --dir",
-    "pretty": "yarn prettier --write .",
-		"dist": "yarn electron-builder"
+		"start": "pnpm electron src/index.js",
+		"pack": "pnpm electron-builder --dir",
+		"pretty": "pnpm prettier --write .",
+		"dist": "pnpm electron-builder"
 	},
 	"keywords": [
 		"electron",
@@ -58,15 +58,15 @@
 		}
 	},
 	"devDependencies": {
-		"electron": "17.1.0",
-		"electron-builder": "^22.14.13",
-		"electron-reload": "^1.5.0",
-		"prettier": "2.5.1"
+		"electron": "30.0.3",
+		"electron-builder": "^24.13.3",
+		"electron-reload": "2.0.0-alpha.1",
+		"prettier": "3.2.5"
 	},
 	"dependencies": {
-		"axios": "^0.26.0",
+		"axios": "^1.6.8",
 		"electron-prompt": "^1.7.0",
-		"phone-fns": "^3.2.3"
+		"phone-fns": "^4.0.1"
 	},
 	"packageManager": "yarn@3.2.0"
 }
