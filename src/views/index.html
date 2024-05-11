@@ -28,8 +28,8 @@
             <div class="row g-3">
                 <div class="col-auto">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control login" style="background-color: transparent; width: 667px;" id="token" placeholder="TOKEN">
-                        <button class="btn btn-outline dropdown-toggle login" style="background-color: transparent; width: 200px; padding-left: 20px; text-align: center;" id="cuentas-token" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar cuenta</button>
+                        <input type="text" class="form-control login" style="background-color: transparent; width: 650px;" id="token" placeholder="TOKEN">
+                        <button class="btn btn-outline dropdown-toggle login" style="background-color: transparent; width: 200px; padding-left: 20px; text-align: center;" id="cuentas-token" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select Account</button>
                         <ul class="dropdown-menu dropdown-menu-end menu-app" id="cuentas-dropdown" style="width: 200px;">
                         </ul>
                     </div>
@@ -38,12 +38,12 @@
                     <button id="login" class="btn login btn-success mb-3" style="width: 120px" disabled="disabled">LOGIN</button>
                 </div>
                 <div class="col-auto">
-                    <button id="guardar" class="btn login btn-info mb-3 " style="width: 120px" disabled="disabled">GUARDAR</button>
-                    <button id="eliminar" class="btn login btn-danger mb-3" style="width: 120px; display: none">ELIMINAR</button>
+                    <button id="guardar" class="btn login btn-info mb-3 " style="width: 120px" disabled="disabled">SAVE</button>
+                    <button id="eliminar" class="btn login btn-danger mb-3" style="width: 120px; display: none">DELETE</button>
                 </div>
             </div>
 
-            <textarea type="text" class="form-control login anim_abajo_insta" style="background-color: transparent; font-family: 'Courier New', Courier, monospace; height: 310px; resize: none; font-size: 11px;" id="consola" placeholder="Respuesta JSON" readonly>{'text': 'No has puesto ningún token.'}</textarea>
+            <textarea type="text" class="form-control login anim_abajo_insta" style="background-color: transparent; font-family: 'Courier New', Courier, monospace; height: 310px; resize: none; font-size: 11px;" id="consola" placeholder="Respuesta JSON" readonly>{'text': 'Please add a token.'}</textarea>
 
             <input type="text" style="display: none;" id="objToken">
         </div>

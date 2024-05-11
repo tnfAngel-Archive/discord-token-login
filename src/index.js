@@ -41,10 +41,10 @@ function createWindow() {
 	mainWindow.loadFile(path.join(__dirname, 'views/index.html'));
 	mainWindow.setResizable(false);
 
-	console.log('Ventana principal creada.');
+	console.log('Main window created.');
 
 	mainWindow.on('closed', () => {
-		console.log('Ventana Principal cerrada.');
+		console.log('Main window closed.');
 
 		app.quit();
 	});
@@ -54,7 +54,7 @@ app.whenReady().then(() => {
 	createWindow();
 
 	app.on('activate', function () {
-		console.log('Aplicación principal activada.');
+		console.log('Main application enabled.');
 
 		if (BrowserWindow.getAllWindows().length === 0) createWindow();
 	});
@@ -75,13 +75,13 @@ ipc.on('app:debug', () => {
 		}
 	});
 
-	console.log('Ventana de Debug creada.');
+	console.log('Debug window created.');
 
 	debugWindow.setMenu(null);
 	debugWindow.setTitle('Discord Token Login Debug');
 	debugWindow.loadFile(path.join(__dirname, 'views/debug.html'));
 
-	debugWindow.on('closed', () => console.log('Ventana de Debug cerrada.'));
+	debugWindow.on('closed', () => console.log('Debug window closed.'));
 });
 
 ipc.on('app:login', (event, token) => {
@@ -103,17 +103,17 @@ ipc.on('app:login', (event, token) => {
 	discordWindow.loadURL('https://discord.com/login');
 
 	discordWindow.on('closed', () =>
-		console.log('Ventana de Discord cerrada.')
+		console.log('Discord window closed.')
 	);
 
-	console.log('Ventana de Discord creada.');
+	console.log('Discord window created.');
 
-	console.log('Login usando el token:', token);
+	console.log('Login using token:', token);
 
 	tokenLogin = token;
 
 	discordWindow.webContents.setWindowOpenHandler(({ url }) => {
-		console.log('Ventana externa abierta en la URL:', url);
+		console.log('External window open:', url);
 
 		return {
 			action: 'allow',
@@ -134,7 +134,7 @@ ipc.on('app:login', (event, token) => {
 });
 
 app.on('window-all-closed', function () {
-	console.log('Todas las ventanas cerradas.');
+	console.log('Every window closed.');
 
 	if (process.platform !== 'darwin') app.quit();
 });

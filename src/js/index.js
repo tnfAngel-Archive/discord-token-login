@@ -38,11 +38,11 @@ $(document).ready(function () {
 
 		if (!agregarToken(cuenta))
 			return (document.getElementById('consola').innerHTML =
-				"{'text': 'No se ha podido guardar el token. Comprueba que el token no se halla guardado anteriormente.'}");
+				"{'text': 'Unable to save the account. Make sure the token is unique.'}");
 
 		document.getElementById(
 			'consola'
-		).innerHTML = `{'text': 'Se ha guardado la cuenta ${cuenta.nombre} correctamente.'}`;
+		).innerHTML = `{'text': 'The account ${cuenta.nombre} has been saved.'}`;
 
 		$('#cuentas-token').html(
 			`<img src="${cuenta.avatar}" class="foto-token" alt="Avatar"> ${
@@ -74,11 +74,11 @@ $(document).ready(function () {
 
 		document.getElementById(
 			'consola'
-		).innerHTML = `{'text': 'Se ha eliminado la cuenta ${cuenta.nombre} correctamente.'}`;
+		).innerHTML = `{'text': 'The account ${cuenta.nombre} has been deleted successfully.'}`;
 
 		actualizarCuentas();
 
-		$('#cuentas-token').html('Seleccionar cuenta');
+		$('#cuentas-token').html('Select account');
 
 		verGuardar(true);
 	});
@@ -129,11 +129,11 @@ function actualizarCuentas() {
 
 		if (cuentasArr.length == 0)
 			cuentasArr.push(
-				`<li><div class="dropdown-item sin-seleccionar">SIN MAS CUENTAS</div></li>`
+				`<li><div class="dropdown-item sin-seleccionar">NO MORE ACCOUNTS</div></li>`
 			);
 	} else {
 		cuentasArr.push(
-			`<li><div class="dropdown-item sin-seleccionar">SIN CUENTAS GUARDADAS</div></li>`
+			`<li><div class="dropdown-item sin-seleccionar">WITHOUT SAVED ACCOUNTS</div></li>`
 		);
 	}
 
@@ -192,14 +192,13 @@ function actualizarPerfil(usuario) {
                         
                         <button class="menu-token" style="background: transparent; border: none; color: #fff" id="menu-sub" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
                         <ul class="dropdown-menu dropdown-menu-end menu-app" style="width: 200px;">
-                            <li><div class="dropdown-item seleccionar-menu" id="menu-debug">VER DEBUG</div></li>
+                            <li><div class="dropdown-item seleccionar-menu" id="menu-debug">VIEW DEBUG</div></li>
                             ${
 								usuario.id
 									? `
                             <li><hr class="dropdown-divider"></li>
-                            <li><div class="dropdown-item seleccionar-menu" id="menu-login">INICIAR SESION</div></li>
+                            <li><div class="dropdown-item seleccionar-menu" id="menu-login">LOG IN</div></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><div class="dropdown-item seleccionar-menu" id="menu-nada">NADA</div></li>
                             `
 									: ''
 							}
@@ -210,23 +209,23 @@ function actualizarPerfil(usuario) {
 								: 'https://cdn.discordapp.com/embed/avatars/0.png'
 						}" id="avatar" class="foto${
 		ejecutado ? '' : ' anim_imagen'
-	}" alt="AVATAR DE ${
+	}" alt="AVATAR OF ${
 		usuario.username
 			? usuario.username.toUpperCase()
-			: 'USUARIO DESCONOCIDO'
+			: 'UNKNOWN'
 	}">
                         <div class="texto-foto">
                             <h1 style="font-size: 60px; line-height: 85%; margin: 0;">${
 								usuario.username
 									? usuario.username.toUpperCase()
-									: 'USUARIO DESCONOCIDO'
+									: 'UNKNOWN'
 							}<span class="blurple" style="letter-spacing: -2px;">#${
 		usuario.discriminator ? usuario.discriminator : '0000'
 	}</span></h1>
                             <h4 style="margin-top: 5px; margin-bottom: 10px;">${
 								usuario.bio
 									? usuario.bio.toUpperCase()
-									: 'DESCRIPCIÓN DESCONOCIDA'
+									: 'UNKNOWN DESCRIPTION'
 							}</h4>
                             <hr style="background-color: #00000090; height: 10px; margin: 0px 0px 10px 0px; border: none;">
                             <div class="row">
@@ -234,12 +233,12 @@ function actualizarPerfil(usuario) {
                                     ${
 										usuario.email
 											? usuario.email.toUpperCase()
-											: 'SIN EMAIL'
+											: 'WITHOUT EMAIL'
 									}
                                 </div>
                                 <div class="col">
-                                    VERIFICADO: ${
-										usuario.verified ? 'SÍ' : 'NO'
+                                    VERIFIED: ${
+										usuario.verified ? 'YES' : 'NO'
 									}
                                 </div>
                                 <div class="col">
@@ -256,22 +255,22 @@ function actualizarPerfil(usuario) {
                                 <div class="col">
                                     ${
 										usuario.phone
-											? 'NUMERO: '.concat(
+											? 'PHONE: '.concat(
 													phoneFns.format(
 														'+NN NNN NN NN NN',
 														usuario.phone
 													)
 											  )
-											: 'SIN NUMERO'
+											: 'WITHOUT PHONE'
 									}
                                 </div>
                                 <div class="col">
-                                    2FA ACTIVADO: ${
+                                    2FA ENABLED: ${
 										usuario.mfa_enabled ? 'SÍ' : 'NO'
 									}
                                 </div>
                                 <div class="col">
-                                    IDIOMA: ${
+                                    LANGUAGE: ${
 										usuario.locale
 											? usuario.locale.toUpperCase()
 											: 'NO'
@@ -313,7 +312,7 @@ async function peticionDiscord() {
 
 			$('#login').attr('disabled', 'disabled');
 			$('#guardar').attr('disabled', 'disabled');
-			$('#cuentas-token').html('Seleccionar cuenta');
+			$('#cuentas-token').html('Select account');
 
 			const tokens = localStorage.getItem('cuentas');
 
@@ -327,7 +326,7 @@ async function peticionDiscord() {
 				if (existe) {
 					document.getElementById(
 						'consola'
-					).innerHTML = `{'text': 'Se ha eliminado la cuenta con el token ${token()} porque el token es invalido.'}`;
+					).innerHTML = `{'text': 'The account with the token ${token()} has been remove because the token is no longer valid.'}`;
 				} else {
 					if (e.response) {
 						document.getElementById('consola').innerHTML =
@@ -394,7 +393,7 @@ async function peticionDiscord() {
 			);
 
 			if (!existe) {
-				$('#cuentas-token').html('Seleccionar cuenta');
+				$('#cuentas-token').html('Select account');
 
 				verGuardar(true);
 
